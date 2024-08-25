@@ -1,0 +1,299 @@
+/* Universal Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* Universal Styling */
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    190deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(101, 101, 157, 1) 27%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  padding: 0;
+}
+
+/* container */
+.container {
+  padding: 8px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 8 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 8 40px;
+  }
+}
+/* container */
+
+/* Header Styles */
+
+header {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 10000000;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .brand {
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+header ul {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+header ul li {
+  margin-right: 20px;
+  font-size: 16px;
+}
+header ul li a {
+  color: white;
+  transition: 0.3s;
+}
+header ul li a:hover {
+  color: blue;
+}
+/* Header Styles */
+
+/* Sections Styling */
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.landing-title {
+  font-weight: bold;
+  font-size: 35px;
+  margin-top: 40px;
+}
+section {
+  margin: 120px 0;
+  width: 50%;
+}
+section.left {
+  align-self: flex-start;
+}
+section.right .title {
+  text-align: end;
+}
+section.right {
+  align-self: flex-end;
+}
+section .title {
+  position: relative;
+}
+
+section .title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(36, 19, 97);
+}
+
+section .title h1 {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+section p {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+
+/* Sections Styiling */
+
+/* Fotter Styling */
+
+footer {
+  min-height: 80px;
+  display: flex;
+  background-color: black;
+  align-items: center;
+}
+/* Fotter Styling */
+
+/* Scroll to top */
+.scroll-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 120px;
+  z-index: 10000;
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+.scroll-to-top a {
+  font-size: 25px;
+}
+/* Scroll to top */
+
+/* Animated Balls Styles */
+.animated-balls {
+  position: absolute;
+  background-color: bisque;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  opacity: 0.4;
+  transition: 0.3s;
+}
+
+/* Left Ball Animation */
+.animated-balls.left {
+  left: 15%;
+  top: 30%;
+  animation: animate-balls-left 10s ease infinite;
+}
+
+@keyframes animate-balls-left {
+  0% {
+    left: 20%;
+    top: 35%;
+  }
+  50% {
+    left: 10%;
+    top: 25%;
+  }
+  100% {
+    left: 20%;
+    top: 35%;
+  }
+}
+
+/* Right Ball Animation */
+.animated-balls.right {
+  right: 15%;
+  top: 30%;
+  animation: animate-balls-right 12s ease infinite;
+}
+
+@keyframes animate-balls-right {
+  0% {
+    right: 20%;
+    top: 35%;
+  }
+  50% {
+    right: 10%;
+    top: 25%;
+  }
+  100% {
+    right: 20%;
+    top: 35%;
+  }
+}
+
+/* Additional Ball Animations */
+.animated-balls.left.bottom {
+  left: 10%;
+  bottom: 20%;
+  animation: animate-balls-left-bottom 15s ease infinite;
+}
+
+@keyframes animate-balls-left-bottom {
+  0% {
+    left: 15%;
+    bottom: 25%;
+  }
+  50% {
+    left: 5%;
+    bottom: 15%;
+  }
+  100% {
+    left: 15%;
+    bottom: 25%;
+  }
+}
+
+.animated-balls.right.bottom {
+  right: 10%;
+  bottom: 20%;
+  animation: animate-balls-right-bottom 18s ease infinite;
+}
+
+@keyframes animate-balls-right-bottom {
+  0% {
+    right: 15%;
+    bottom: 25%;
+  }
+  50% {
+    right: 5%;
+    bottom: 15%;
+  }
+  100% {
+    right: 15%;
+    bottom: 25%;
+  }
+}
+
+/* Bottom Center Balls */
+.animated-balls.center.bottom {
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  animation: animate-balls-center-bottom 18s ease infinite;
+}
+
+@keyframes animate-balls-center-bottom {
+  0% {
+    left: 45%;
+    bottom: 15%;
+  }
+  50% {
+    left: 55%;
+    bottom: 5%;
+  }
+  100% {
+    left: 45%;
+    bottom: 15%;
+  }
+}
